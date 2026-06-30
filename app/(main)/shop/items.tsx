@@ -27,18 +27,18 @@ export const Items = ({
     if (pending || hearts === MAX_HEARTS || points < POINTS_TO_REFILL) return;
 
     startTransition(() => {
-      refillHearts().catch(() => toast.error("Something went wrong."));
+      refillHearts().catch(() => toast.error("出了点问题"));
     });
   };
 
   const onUpgrade = () => {
-    toast.loading("Redirecting to checkout...");
+    toast.loading("正在跳转结账...");
     startTransition(() => {
       createStripeUrl()
         .then((response) => {
           if (response.data) window.location.href = response.data;
         })
-        .catch(() => toast.error("Something went wrong."));
+        .catch(() => toast.error("出了点问题"));
     });
   };
 
@@ -49,7 +49,7 @@ export const Items = ({
 
         <div className="flex-1">
           <p className="text-base font-bold text-neutral-700 lg:text-xl">
-            Refill hearts
+            补充红心
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export const Items = ({
           }
         >
           {hearts === MAX_HEARTS ? (
-            "full"
+            "已满"
           ) : (
             <div className="flex items-center">
               <Image src="/points.svg" alt="Points" height={20} width={20} />
@@ -79,12 +79,12 @@ export const Items = ({
 
         <div className="flex-1">
           <p className="text-base font-bold text-neutral-700 lg:text-xl">
-            Unlimited hearts
+            无限红心
           </p>
         </div>
 
         <Button onClick={onUpgrade} disabled={pending} aria-disabled={pending}>
-          {hasActiveSubscription ? "settings" : "upgrade"}
+          {hasActiveSubscription ? "设置" : "升级"}
         </Button>
       </div>
     </ul>

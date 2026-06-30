@@ -1,0 +1,115 @@
+{
+  "Navigation": {
+    "learn": "Learn",
+    "leaderboard": "Leaderboard",
+    "quests": "Quests",
+    "shop": "Shop"
+  },
+  "Common": {
+    "login": "Login",
+    "continue": "Continue",
+    "start": "Start",
+    "continue_learning": "Continue Learning",
+    "language_courses": "Language Courses",
+    "view_all": "View all",
+    "decline": "No thanks"
+  },
+  "Courses": {
+    "title": "Language Courses",
+    "select_course": "Select a course to start learning"
+  },
+  "Learn": {
+    "title": "Learn",
+    "unit": "Unit",
+    "lesson": "Lesson",
+    "completed": "Completed"
+  },
+  "Shop": {
+    "title": "Shop",
+    "subtitle": "Spend your points on cool stuff.",
+    "hearts": "Hearts",
+    "points": "Points",
+    "locked": "Unlock with Plus"
+  },
+  "Leaderboard": {
+    "title": "Leaderboard",
+    "subtitle": "See where you stand among other learners in the community.",
+    "xp": "XP"
+  },
+  "Quests": {
+    "title": "Quests",
+    "subtitle": "Complete quests by earning points.",
+    "points": "points"
+  },
+  "Lesson": {
+    "quiz": "Quiz",
+    "complete": "Complete",
+    "hearts": "Hearts",
+    "xp": "XP",
+    "continue": "Continue",
+    "exit": "Exit",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "try_again": "Try again"
+  },
+  "Footer": {
+    "croatian": "Croatian",
+    "spanish": "Spanish",
+    "french": "French",
+    "italian": "Italian",
+    "japanese": "Japanese"
+  },
+  "Cookie": {
+    "message": "We use cookies to optimize your browsing experience.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "Auth": {
+    "sign_in": "Sign in",
+    "sign_up": "Sign up"
+  },
+  "Promo": {
+    "upgrade": "Upgrade to Plus",
+    "features": "Unlimited hearts · Ad-free · Exclusive features"
+  },
+  "HeartsModal": {
+    "title": "You ran out of hearts!",
+    "message": "Get Pro for unlimited hearts, or purchase them in the store.",
+    "get_hearts": "Get unlimited hearts"
+  },
+  "ExitModal": {
+    "title": "Wait, don't go!",
+    "message": "You're about to leave the lesson. Are you sure?",
+    "exit": "Exit",
+    "continue": "Keep learning"
+  },
+  "PracticeModal": {
+    "title": "Practice lesson",
+    "message": "Use practice lessons to regain hearts and points. You cannot lose hearts or points in practice lessons.",
+    "start": "Start Practice"
+  },
+  "Marketing": {
+    "hero_title": "Learn, practice and master new languages with Lingo.",
+    "login": "Login",
+    "start": "Start learning for free"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "updated": "Updated July 1, 2026"
+  },
+  "Terms": {
+    "title": "Terms of Service",
+    "updated": "Updated July 1, 2026"
+  },
+  "Admin": {
+    "dashboard": "Dashboard",
+    "courses": "Courses",
+    "units": "Units",
+    "lessons": "Lessons",
+    "challenges": "Challenges"
+  },
+  "UserProgress": {
+    "hearts": "Hearts",
+    "points": "Points"
+  }
+}

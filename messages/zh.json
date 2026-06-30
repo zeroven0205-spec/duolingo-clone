@@ -1,0 +1,115 @@
+{
+  "Navigation": {
+    "learn": "学习",
+    "leaderboard": "排行榜",
+    "quests": "任务",
+    "shop": "商店"
+  },
+  "Common": {
+    "login": "登录",
+    "continue": "继续",
+    "start": "开始",
+    "continue_learning": "继续学习",
+    "language_courses": "语言课程",
+    "view_all": "查看全部",
+    "decline": "不了，谢谢"
+  },
+  "Courses": {
+    "title": "语言课程",
+    "select_course": "选择一门课程开始学习"
+  },
+  "Learn": {
+    "title": "学习",
+    "unit": "单元",
+    "lesson": "课时",
+    "completed": "已完成"
+  },
+  "Shop": {
+    "title": "商店",
+    "subtitle": "用积分兑换奖励",
+    "hearts": "红心",
+    "points": "积分",
+    "locked": "解锁 Plus 后可用"
+  },
+  "Leaderboard": {
+    "title": "排行榜",
+    "subtitle": "看看你在社区学习者中的排名",
+    "xp": "经验值"
+  },
+  "Quests": {
+    "title": "任务",
+    "subtitle": "通过获取积分完成任务",
+    "points": "积分"
+  },
+  "Lesson": {
+    "quiz": "测验",
+    "complete": "完成",
+    "hearts": "红心",
+    "xp": "经验值",
+    "continue": "继续",
+    "exit": "退出",
+    "correct": "正确！",
+    "incorrect": "错误",
+    "try_again": "再试一次"
+  },
+  "Footer": {
+    "croatian": "克罗地亚语",
+    "spanish": "西班牙语",
+    "french": "法语",
+    "italian": "意大利语",
+    "japanese": "日语"
+  },
+  "Cookie": {
+    "message": "我们使用 Cookie 来优化您的浏览体验。",
+    "accept": "接受",
+    "decline": "拒绝"
+  },
+  "Auth": {
+    "sign_in": "登录",
+    "sign_up": "注册"
+  },
+  "Promo": {
+    "upgrade": "升级到 Plus",
+    "features": "无限红心 · 无广告 · 独家功能"
+  },
+  "HeartsModal": {
+    "title": "红心耗尽！",
+    "message": "升级到 Pro 获取无限红心，或在商店购买。",
+    "get_hearts": "获取无限红心"
+  },
+  "ExitModal": {
+    "title": "等等，别走！",
+    "message": "你即将离开课程。确定要退出吗？",
+    "exit": "退出",
+    "continue": "继续学习"
+  },
+  "PracticeModal": {
+    "title": "复习时间！",
+    "message": "完成练习课程可帮你回复红心和积分。练习课程不会扣除红心或积分。",
+    "start": "开始练习"
+  },
+  "Marketing": {
+    "hero_title": "学习、练习、掌握新语言",
+    "login": "登录",
+    "start": "开始免费学习"
+  },
+  "Privacy": {
+    "title": "隐私政策",
+    "updated": "更新日期：2026年7月1日"
+  },
+  "Terms": {
+    "title": "服务条款",
+    "updated": "更新日期：2026年7月1日"
+  },
+  "Admin": {
+    "dashboard": "仪表盘",
+    "courses": "课程管理",
+    "units": "单元管理",
+    "lessons": "课时管理",
+    "challenges": "挑战管理"
+  },
+  "UserProgress": {
+    "hearts": "红心",
+    "points": "积分"
+  }
+}

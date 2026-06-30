@@ -23,8 +23,8 @@
   {
     "pattern": "Create prevention rule for: 1 hardcoded secret mat",
     "strategy": "Creating prevention rule for recurring gap",
-    "successRate": 0.775,
-    "lastMatched": "2026-06-30T16:55:07.290Z",
-    "effectivenessScore": 0.78
+    "successRate": 0.8875,
+    "lastMatched": "2026-06-30T17:27:58.265Z",
+    "effectivenessScore": 0.8
   }
 ]

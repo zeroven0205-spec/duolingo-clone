@@ -20,7 +20,7 @@ export default function MarketingPage() {
 
       <div className="flex flex-col items-center gap-y-8">
         <h1 className="max-w-[480px] text-center text-xl font-bold text-neutral-600 lg:text-3xl">
-          Learn, practice and master new languages with Lingo.
+          学习、练习、掌握新语言 — 用 Lingo
         </h1>
 
         <div className="flex w-full max-w-[330px] flex-col items-center gap-y-3">
@@ -31,20 +31,20 @@ export default function MarketingPage() {
           <ClerkLoaded>
             <Show when="signed-in">
               <Button size="lg" variant="secondary" className="w-full" asChild>
-                <Link href="/learn">Continue Learning</Link>
+                <Link href="/learn">继续学习</Link>
               </Button>
             </Show>
 
             <Show when="signed-out">
               <SignUpButton mode="modal">
                 <Button size="lg" variant="secondary" className="w-full">
-                  Get Started
+                  免费开始学习
                 </Button>
               </SignUpButton>
 
               <SignInButton mode="modal">
                 <Button size="lg" variant="primaryOutline" className="w-full">
-                  I already have an account
+                  我已有账号
                 </Button>
               </SignInButton>
             </Show>

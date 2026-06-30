@@ -14,10 +14,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { usePracticeModal } from "@/store/use-practice-modal";
+import { useTranslation } from "./locale-provider";
 
 export const PracticeModal = () => {
   const [isClient, setIsClient] = useState(false);
   const { isOpen, close } = usePracticeModal();
+  const { t } = useTranslation();
 
   useEffect(() => setIsClient(true), []);
 
@@ -32,12 +34,11 @@ export const PracticeModal = () => {
           </div>
 
           <DialogTitle className="text-center text-2xl font-bold">
-            Practice lesson
+            {t("PracticeModal.title")}
           </DialogTitle>
 
           <DialogDescription className="text-center text-base">
-            Use practice lessons to regain hearts and points. You cannot loose
-            hearts or points in practice lessons.
+            {t("PracticeModal.message")}
           </DialogDescription>
         </DialogHeader>
 
@@ -49,7 +50,7 @@ export const PracticeModal = () => {
               size="lg"
               onClick={close}
             >
-              I understand
+              {t("Common.continue")}
             </Button>
           </div>
         </DialogFooter>

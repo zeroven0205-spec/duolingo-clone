@@ -15,11 +15,13 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useHeartsModal } from "@/store/use-hearts-modal";
+import { useTranslation } from "./locale-provider";
 
 export const HeartsModal = () => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const { isOpen, close } = useHeartsModal();
+  const { t } = useTranslation();
 
   useEffect(() => setIsClient(true), []);
 
@@ -44,11 +46,11 @@ export const HeartsModal = () => {
           </div>
 
           <DialogTitle className="text-center text-2xl font-bold">
-            You ran out of hearts!
+            {t("HeartsModal.title")}
           </DialogTitle>
 
           <DialogDescription className="text-center text-base">
-            Get Pro for unlimited hearts, or purchase them in the store.
+            {t("HeartsModal.message")}
           </DialogDescription>
         </DialogHeader>
 
@@ -60,7 +62,7 @@ export const HeartsModal = () => {
               size="lg"
               onClick={onClick}
             >
-              Get unlimited hearts
+              {t("HeartsModal.get_hearts")}
             </Button>
 
             <Button
@@ -69,7 +71,7 @@ export const HeartsModal = () => {
               size="lg"
               onClick={close}
             >
-              No thanks
+              {t("Common.decline")}
             </Button>
           </div>
         </DialogFooter>

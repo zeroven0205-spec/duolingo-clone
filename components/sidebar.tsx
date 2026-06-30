@@ -1,3 +1,4 @@
+"use client";
 import { ClerkLoading, ClerkLoaded, UserButton } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import Image from "next/image";
@@ -6,12 +7,15 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 import { SidebarItem } from "./sidebar-item";
+import { useTranslation } from "./locale-provider";
 
 type SidebarProps = {
   className?: string;
 };
 
 export const Sidebar = ({ className }: SidebarProps) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={cn(
@@ -30,14 +34,14 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Link>
 
       <div className="flex flex-1 flex-col gap-y-2">
-        <SidebarItem label="Learn" href="/learn" iconSrc="/learn.svg" />
+        <SidebarItem label={t("Navigation.learn")} href="/learn" iconSrc="/learn.svg" />
         <SidebarItem
-          label="Leaderboard"
+          label={t("Navigation.leaderboard")}
           href="/leaderboard"
           iconSrc="/leaderboard.svg"
         />
-        <SidebarItem label="Quests" href="/quests" iconSrc="/quests.svg" />
-        <SidebarItem label="Shop" href="/shop" iconSrc="/shop.svg" />
+        <SidebarItem label={t("Navigation.quests")} href="/quests" iconSrc="/quests.svg" />
+        <SidebarItem label={t("Navigation.shop")} href="/shop" iconSrc="/shop.svg" />
       </div>
 
       <div className="p-4">

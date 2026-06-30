@@ -1,9 +1,13 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "./locale-provider";
 
 export const Promo = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="space-y-4 rounded-xl border-2 p-4">
       <div className="space-y-2">

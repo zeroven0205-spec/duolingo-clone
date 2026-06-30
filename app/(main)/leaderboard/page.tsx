@@ -52,10 +52,10 @@ const LeaderboardPage = async () => {
           />
 
           <h1 className="my-6 text-center text-2xl font-bold text-neutral-800">
-            Leaderboard
+            排行榜
           </h1>
           <p className="mb-6 text-center text-lg text-muted-foreground">
-            See where you stand among other learners in the community.
+            看看你在社区学习者中的排名
           </p>
 
           <Separator className="mb-4 h-0.5 rounded-full" />
