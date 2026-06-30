@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "G1",
+      "description": "All changes must pass verify.sh",
+      "enforcement": "pre-commit"
+    }
+  ]
+}

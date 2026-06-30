@@ -6,6 +6,7 @@ import { ExitModal } from "@/components/modals/exit-modal";
 import { HeartsModal } from "@/components/modals/hearts-modal";
 import { PracticeModal } from "@/components/modals/practice-modal";
 import { Toaster } from "@/components/ui/sonner";
+import { CookieBanner } from "@/components/cookie-banner";
 import { siteConfig } from "@/config";
 
 import "./globals.css";
@@ -38,6 +39,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={font.className}>
           <Toaster theme="light" richColors closeButton />
+          <CookieBanner />
           <ExitModal />
           <HeartsModal />
           <PracticeModal />

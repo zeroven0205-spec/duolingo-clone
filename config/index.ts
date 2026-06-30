@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "Lingo",
+  title: "Lingo - 语言学习平台",
   description:
-    "Interactive platform for language learning with lessons, quizzes, and progress tracking.",
+    "Lingo 是一款互动式语言学习平台，提供课程、测验和进度追踪。支持英语、西班牙语、法语、日语等多语言学习。",
+  openGraph: {
+    type: "website",
+    locale: "zh_CN",
+    url: "https://lingo-app.com",
+    siteName: "Lingo",
+  },
   keywords: [
     "reactjs",
     "nextjs",

@@ -71,6 +71,18 @@ export const Header = () => {
                   width={20}
                 />
               </Link>
+              <Link
+                href="/privacy-policy"
+                className="pt-2 text-sm text-gray-500 hover:text-gray-700"
+              >
+                隐私
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="pt-2 text-sm text-gray-500 hover:text-gray-700"
+              >
+                条款
+              </Link>
             </ClerkLoaded>
           </div>
         </div>

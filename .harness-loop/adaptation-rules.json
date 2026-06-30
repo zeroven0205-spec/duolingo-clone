@@ -1,0 +1,30 @@
+[
+  {
+    "pattern": "Create prevention rule for: No audit log reference",
+    "strategy": "Creating prevention rule for recurring gap",
+    "successRate": 0.7722222222222221,
+    "lastMatched": "2026-06-30T16:55:05.873Z",
+    "effectivenessScore": 0.77
+  },
+  {
+    "pattern": "Improve error handling and recovery",
+    "strategy": "Improving error handling",
+    "successRate": 0.6611111111111111,
+    "lastMatched": "2026-06-30T16:55:06.344Z",
+    "effectivenessScore": 0.79
+  },
+  {
+    "pattern": "Optimize strategy for 1 failed improvements",
+    "strategy": "Optimizing executor strategy based on failure patterns",
+    "successRate": 0.6361111111111111,
+    "lastMatched": "2026-06-30T16:55:06.344Z",
+    "effectivenessScore": 0.74
+  },
+  {
+    "pattern": "Create prevention rule for: 1 hardcoded secret mat",
+    "strategy": "Creating prevention rule for recurring gap",
+    "successRate": 0.775,
+    "lastMatched": "2026-06-30T16:55:07.290Z",
+    "effectivenessScore": 0.78
+  }
+]
