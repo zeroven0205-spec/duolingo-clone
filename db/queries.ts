@@ -14,6 +14,7 @@ import {
 } from "./schema";
 
 const DAY_IN_MS = 86_400_000;
+const STREAK_REWARD_DAYS = [3, 7, 30];
 
 export const getCourses = cache(async () => {
   const data = await db.query.courses.findMany();
@@ -244,3 +245,53 @@ export const getTopTenUsers = cache(async () => {
 
   return data;
 });
+
+export const updateUserStreak = async (userId: string) => {
+  const user = await db.query.userProgress.findFirst({
+    where: eq(userProgress.userId, userId),
+  });
+
+  if (!user) return null;
+
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const lastLogin = user.lastLoginDate
+    ? new Date(
+        user.lastLoginDate.getFullYear(),
+        user.lastLoginDate.getMonth(),
+        user.lastLoginDate.getDate()
+      )
+    : null;
+
+  let newStreak = user.streak;
+
+  if (!lastLogin) {
+    newStreak = 1;
+  } else {
+    const daysDiff = Math.floor(
+      (today.getTime() - lastLogin.getTime()) / DAY_IN_MS
+    );
+
+    if (daysDiff === 0) {
+      return user;
+    } else if (daysDiff === 1) {
+      newStreak = user.streak + 1;
+    } else {
+      newStreak = 1;
+    }
+  }
+
+  await db
+    .update(userProgress)
+    .set({
+      streak: newStreak,
+      lastLoginDate: now,
+    })
+    .where(eq(userProgress.userId, userId));
+
+  return {
+    ...user,
+    streak: newStreak,
+    lastLoginDate: now,
+  };
+};
