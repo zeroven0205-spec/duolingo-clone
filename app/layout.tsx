@@ -9,6 +9,7 @@ import { PracticeModal } from "@/components/modals/practice-modal";
 import { Toaster } from "@/components/ui/sonner";
 import { CookieBanner } from "@/components/cookie-banner";
 import { LocaleLoader } from "@/components/locale-loader";
+import { UpdateToast } from "@/components/update-toast";
 import { siteConfig } from "@/config";
 
 import "./globals.css";
@@ -43,6 +44,7 @@ export default async function RootLayout({
     >
       <html lang={locale === "zh" ? "zh" : "en"}>
         <body className={font.className}>
+          <UpdateToast />
           <LocaleLoader initialLocale={locale}>
             <Toaster theme="light" richColors closeButton />
             <CookieBanner />
