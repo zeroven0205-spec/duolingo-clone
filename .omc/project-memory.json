@@ -1,0 +1,285 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1782864762958,
+  "projectRoot": "/Users/zero_ven/Projects/duolingo-clone",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "16.2.9",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.2.7",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.7",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "pnpm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "pnpm build",
+    "testCommand": "pnpm test",
+    "lintCommand": "pnpm lint",
+    "devCommand": "pnpm dev",
+    "scripts": {
+      "dev": "next dev --turbopack",
+      "build": "next build --turbopack",
+      "start": "next start",
+      "lint": "eslint",
+      "lint:fix": "eslint --fix",
+      "format": "prettier --check --ignore-path .gitignore .",
+      "format:fix": "prettier --write --ignore-path .gitignore .",
+      "db:studio": "drizzle-kit studio",
+      "db:push": "drizzle-kit push",
+      "db:prod": "tsx ./scripts/prod.ts",
+      "test": "vitest"
+    }
+  },
+  "conventions": {
+    "namingStyle": "camelCase",
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "app",
+      "components",
+      "docs",
+      "lib",
+      "public",
+      "scripts",
+      "src",
+      "tests"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "actions": {
+      "path": "actions",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1782864762876,
+      "keyFiles": [
+        "challenge-progress.ts",
+        "user-progress.ts",
+        "user-subscription.ts"
+      ]
+    },
+    "app": {
+      "path": "app",
+      "purpose": "Application code",
+      "fileCount": 6,
+      "lastAccessed": 1782864762879,
+      "keyFiles": [
+        "apple-icon.png",
+        "favicon.ico",
+        "globals.css",
+        "icon1.png",
+        "icon2.png"
+      ]
+    },
+    "components": {
+      "path": "components",
+      "purpose": "UI components",
+      "fileCount": 14,
+      "lastAccessed": 1782864762890,
+      "keyFiles": [
+        "banner.tsx",
+        "cookie-banner.tsx",
+        "feed-wrapper.tsx",
+        "locale-loader.tsx",
+        "locale-provider.tsx"
+      ]
+    },
+    "config": {
+      "path": "config",
+      "purpose": "Configuration files",
+      "fileCount": 1,
+      "lastAccessed": 1782864762891,
+      "keyFiles": [
+        "index.ts"
+      ]
+    },
+    "db": {
+      "path": "db",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1782864762892,
+      "keyFiles": [
+        "drizzle.ts",
+        "queries.ts",
+        "schema.ts"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1782864762893,
+      "keyFiles": [
+        "README.md"
+      ]
+    },
+    "i18n": {
+      "path": "i18n",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1782864762893,
+      "keyFiles": [
+        "request.ts",
+        "routing.ts"
+      ]
+    },
+    "lib": {
+      "path": "lib",
+      "purpose": "Library code",
+      "fileCount": 5,
+      "lastAccessed": 1782864762894,
+      "keyFiles": [
+        "admin.ts",
+        "get-locale.ts",
+        "i18n.ts",
+        "stripe.ts",
+        "utils.ts"
+      ]
+    },
+    "messages": {
+      "path": "messages",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1782864762894,
+      "keyFiles": [
+        "en.json",
+        "zh.json"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 35,
+      "lastAccessed": 1782864762895,
+      "keyFiles": [
+        "boy.svg",
+        "correct.wav",
+        "es.svg",
+        "es_boy.mp3",
+        "es_girl.mp3"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 4,
+      "lastAccessed": 1782864762896,
+      "keyFiles": [
+        "policy-check.mjs",
+        "prod.ts",
+        "secret-scan.sh",
+        "verify.sh"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1782864762896,
+      "keyFiles": []
+    },
+    "store": {
+      "path": "store",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1782864762896,
+      "keyFiles": [
+        "use-exit-modal.ts",
+        "use-hearts-modal.ts",
+        "use-practice-modal.ts"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1782864762897,
+      "keyFiles": []
+    },
+    "app/api": {
+      "path": "app/api",
+      "purpose": "API routes",
+      "fileCount": 0,
+      "lastAccessed": 1782864762916,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "docs/plans/README.md",
+      "accessCount": 3,
+      "lastAccessed": 1782864913273,
+      "type": "file"
+    },
+    {
+      "path": "docs/quality/8-dim-and-verify-2026-07-01.md",
+      "accessCount": 1,
+      "lastAccessed": 1782864817657,
+      "type": "file"
+    },
+    {
+      "path": "docs/business/monetization-plan-2026-07-01.md",
+      "accessCount": 1,
+      "lastAccessed": 1782864818356,
+      "type": "file"
+    },
+    {
+      "path": "docs/product/产品业务介绍-2026-07-01.md",
+      "accessCount": 1,
+      "lastAccessed": 1782864818438,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/active/v1.0.0-commercialization.md",
+      "accessCount": 1,
+      "lastAccessed": 1782864851010,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/active/v1.2.0-verify-stripe.md",
+      "accessCount": 1,
+      "lastAccessed": 1782864887318,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
