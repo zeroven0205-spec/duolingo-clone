@@ -80,3 +80,10 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide Clerk development mode banner/modal */
+.cl-dev-banner,
+.cl-dev-modal,
+[data-clerk-developer-mode] {
+  display: none !important;
+}

@@ -2,7 +2,9 @@
 
 ## Active
 
-*无 Active 版本*
+| 版本 | 状态 | 目标分数 | 说明 |
+| ---- | ---- | -------- | ---- |
+| [v1.9.0-bugfix-stability.md](./active/v1.9.0-bugfix-stability.md) | **Active** | 8.0/10 | Bug 修复 + 稳定性 |
 
 ## Completed
 

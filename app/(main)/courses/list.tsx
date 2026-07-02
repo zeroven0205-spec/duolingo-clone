@@ -24,7 +24,10 @@ export const List = ({ courses, activeCourseId }: ListProps) => {
 
     if (id === activeCourseId) return router.push("/learn");
 
+    const courseName = courses.find((c) => c.id === id)?.title || "Course";
+
     startTransition(() => {
+      toast.success(`Selected ${courseName}!`, { icon: "🎯" });
       upsertUserProgress(id).catch(() => toast.error("Something went wrong."));
     });
   };

@@ -246,8 +246,8 @@
   "hotPaths": [
     {
       "path": "docs/plans/README.md",
-      "accessCount": 12,
-      "lastAccessed": 1782953286255,
+      "accessCount": 14,
+      "lastAccessed": 1782987596426,
       "type": "file"
     },
     {
@@ -260,6 +260,12 @@
       "path": "db/drizzle.ts",
       "accessCount": 6,
       "lastAccessed": 1782953119252,
+      "type": "file"
+    },
+    {
+      "path": "middleware.ts",
+      "accessCount": 6,
+      "lastAccessed": 1782989676096,
       "type": "file"
     },
     {
@@ -296,12 +302,6 @@
       "path": "scripts/verify.sh",
       "accessCount": 3,
       "lastAccessed": 1782951902101,
-      "type": "file"
-    },
-    {
-      "path": "middleware.ts",
-      "accessCount": 3,
-      "lastAccessed": 1782952131952,
       "type": "file"
     },
     {

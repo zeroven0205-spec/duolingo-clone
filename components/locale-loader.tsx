@@ -30,7 +30,11 @@ export function LocaleLoader({
   function switchLocale(newLocale: Locale) {
     localStorage.setItem("locale", newLocale);
     setLocale(newLocale);
-    localeModules[newLocale]().then((m) => setMessages(m));
+    localeModules[newLocale]().then((m) => {
+      setMessages(m);
+      // Force page reload to apply new language
+      window.location.reload();
+    });
   }
 
   if (!messages) return <>{children}</>;
