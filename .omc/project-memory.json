@@ -269,6 +269,18 @@
       "type": "file"
     },
     {
+      "path": "scripts/verify.sh",
+      "accessCount": 6,
+      "lastAccessed": 1783003016942,
+      "type": "file"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "accessCount": 6,
+      "lastAccessed": 1783003138927,
+      "type": "file"
+    },
+    {
       "path": "actions/user-progress.ts",
       "accessCount": 5,
       "lastAccessed": 1782952065971,
@@ -293,9 +305,9 @@
       "type": "file"
     },
     {
-      "path": "scripts/verify.sh",
+      "path": "package.json",
       "accessCount": 4,
-      "lastAccessed": 1782996249870,
+      "lastAccessed": 1783003482303,
       "type": "file"
     },
     {
@@ -368,12 +380,6 @@
       "path": "components/user-progress.tsx",
       "accessCount": 2,
       "lastAccessed": 1782953100672,
-      "type": "file"
-    },
-    {
-      "path": "eslint.config.mjs",
-      "accessCount": 2,
-      "lastAccessed": 1782996258039,
       "type": "file"
     },
     {
@@ -458,12 +464,6 @@
       "path": "docs/plans/active/v1.7.0-infrastructure-observability.md",
       "accessCount": 1,
       "lastAccessed": 1782951759741,
-      "type": "file"
-    },
-    {
-      "path": "package.json",
-      "accessCount": 1,
-      "lastAccessed": 1782951894221,
       "type": "file"
     },
     {

@@ -11,7 +11,7 @@ npx tsc --noEmit
 
 # Step 2: Test
 echo "[2/6] Running tests..."
-pnpm test --run
+pnpm exec vitest --run
 
 # Step 3: Lint
 echo "[3/6] Linting..."
