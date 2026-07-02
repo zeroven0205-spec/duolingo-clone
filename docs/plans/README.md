@@ -2,9 +2,7 @@
 
 ## Active
 
-| 版本 | 状态 | 目标分数 | 说明 |
-| ---- | ---- | -------- | ---- |
-| [v1.9.0-bugfix-stability.md](./active/v1.9.0-bugfix-stability.md) | **Active** | 8.0/10 | Bug 修复 + 稳定性 |
+*无 Active 版本*
 
 ## Completed
 
@@ -19,6 +17,7 @@
 | [v1.6.0-adaptive-ai.md](./completed/v1.6.0-adaptive-ai.md) | 2026-07-02 | 自适应学习 + AI 发音 |
 | [v1.7.0-infrastructure-observability.md](./completed/v1.7.0-infrastructure-observability.md) | 2026-07-02 | 中间件合并 + 基础设施 |
 | [v1.8.0-streak-ui-social.md](./completed/v1.8.0-streak-ui-social.md) | 2026-07-02 | 签到 UI + 好友系统 |
+| [v1.9.0-bugfix-stability.md](./completed/v1.9.0-bugfix-stability.md) | 2026-07-02 | Bug 修复 + 稳定性 |
 
 ---
 
@@ -33,7 +32,8 @@ v1.4.0 ✅ PWA 离线 + manifest
 v1.5.0 ✅ B2B 多租户 + 教师 Dashboard
 v1.6.0 ✅ 自适应学习 + AI 发音
 v1.7.0 ✅ 中间件合并 + 基础设施
-v1.8.0 ✅ 签到 UI + 好友系统 ← 全部完成！
+v1.8.0 ✅ 签到 UI + 好友系统
+v1.9.0 ✅ Bug 修复 + 稳定性
 v2.0.0 📋 商业化发布（待规划）
 ```
 
@@ -48,10 +48,11 @@ v2.0.0 📋 商业化发布（待规划）
 | v1.2.0 | verify.sh 真实化、PostHog 埋点、Stripe Webhook |
 | v1.3.0 | Loop 状态更新（无功能变更）|
 | v1.4.0 | PWA manifest、Service Worker 配置、UpdateToast |
-| v1.5.0 | 多租户 Schema、教师 Dashboard、班级管理 API |
+| v1.5.0 | 多租户 Schema，教师 Dashboard、班级管理 API |
 | v1.6.0 | Spaced Repetition、Web Speech API、签到奖励逻辑 |
 | v1.7.0 | 中间件合并（Clerk + locale）|
 | v1.8.0 | StreakBadge、StreakToast、好友系统、/friends 页面 |
+| v1.9.0 | /privacy 路由公开、i18n 修复、/demo 页面、Clerk 弹窗隐藏 |
 
 ---
 
@@ -64,15 +65,23 @@ v2.0.0 📋 商业化发布（待规划）
 
 ---
 
-## 新增代码文件 (v1.8.0)
+## 新增代码文件 (v1.8.0 - v1.9.0)
 
 ```
-components/streak-toast.tsx    # 签到奖励 Toast 提示
-components/streak-badge.tsx   # 连续签到徽章
-app/(main)/friends/page.tsx  # 好友页面
-app/(main)/friends/friends-list.tsx
-app/api/friends/route.ts     # 好友 API
-db/schema-social.ts          # 好友数据模型
+v1.8.0:
+  components/streak-toast.tsx    # 签到奖励 Toast 提示
+  components/streak-badge.tsx   # 连续签到徽章
+  app/(main)/friends/page.tsx  # 好友页面
+  app/(main)/friends/friends-list.tsx
+  app/api/friends/route.ts     # 好友 API
+  db/schema-social.ts          # 好友数据模型
+
+v1.9.0:
+  app/(marketing)/demo/page.tsx  # Demo 体验页面
+  middleware.ts                  # 路由修复
+  components/locale-loader.tsx   # i18n 修复
+  app/(main)/courses/list.tsx   # 添加 toast 反馈
+  app/globals.css               # 隐藏 Clerk 弹窗
 ```
 
 详见: [monetization-plan-2026-07-01.md](../business/monetization-plan-2026-07-01.md)
