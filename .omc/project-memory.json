@@ -246,8 +246,116 @@
   "hotPaths": [
     {
       "path": "docs/plans/README.md",
+      "accessCount": 10,
+      "lastAccessed": 1782952673630,
+      "type": "file"
+    },
+    {
+      "path": "lib/speech评估.ts",
+      "accessCount": 6,
+      "lastAccessed": 1782951249052,
+      "type": "file"
+    },
+    {
+      "path": "actions/user-progress.ts",
+      "accessCount": 5,
+      "lastAccessed": 1782952065971,
+      "type": "file"
+    },
+    {
+      "path": "actions/user-streak.ts",
+      "accessCount": 4,
+      "lastAccessed": 1782951219385,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/active/v1.6.0-adaptive-ai.md",
+      "accessCount": 4,
+      "lastAccessed": 1782951349768,
+      "type": "file"
+    },
+    {
+      "path": "db/drizzle.ts",
+      "accessCount": 4,
+      "lastAccessed": 1782952351723,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.0.0-commercialization.md",
       "accessCount": 3,
-      "lastAccessed": 1782864913273,
+      "lastAccessed": 1782951784339,
+      "type": "file"
+    },
+    {
+      "path": "scripts/verify.sh",
+      "accessCount": 3,
+      "lastAccessed": 1782951902101,
+      "type": "file"
+    },
+    {
+      "path": "middleware.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782952131952,
+      "type": "file"
+    },
+    {
+      "path": "app/layout.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1782952237341,
+      "type": "file"
+    },
+    {
+      "path": "lib/tenant.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782952386960,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/active/v1.8.0-streak-ui-social.md",
+      "accessCount": 3,
+      "lastAccessed": 1782952605041,
+      "type": "file"
+    },
+    {
+      "path": "db/queries.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782951064910,
+      "type": "file"
+    },
+    {
+      "path": "db/schema-word-progress.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782951156647,
+      "type": "file"
+    },
+    {
+      "path": "components/modals/exit-modal.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1782951286568,
+      "type": "file"
+    },
+    {
+      "path": "components/modals/hearts-modal.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1782951294642,
+      "type": "file"
+    },
+    {
+      "path": "components/modals/practice-modal.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1782951295903,
+      "type": "file"
+    },
+    {
+      "path": "config/index.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782952245414,
+      "type": "file"
+    },
+    {
+      "path": "db/schema-tenant.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782952379174,
       "type": "file"
     },
     {
@@ -278,6 +386,126 @@
       "path": "docs/plans/active/v1.2.0-verify-stripe.md",
       "accessCount": 1,
       "lastAccessed": 1782864887318,
+      "type": "file"
+    },
+    {
+      "path": "db/schema.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782951049008,
+      "type": "file"
+    },
+    {
+      "path": "constants.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782951069843,
+      "type": "file"
+    },
+    {
+      "path": "lib/spaced-repetition.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782951122711,
+      "type": "file"
+    },
+    {
+      "path": "app/api/review-queue/route.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782951146269,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.2.0-verify-stripe.md",
+      "accessCount": 1,
+      "lastAccessed": 1782951585845,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.4.0-pwa-offline.md",
+      "accessCount": 1,
+      "lastAccessed": 1782951586128,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.5.0-b2b-school.md",
+      "accessCount": 1,
+      "lastAccessed": 1782951586243,
+      "type": "file"
+    },
+    {
+      "path": "app/api/webhooks/stripe/route.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782951609115,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/active/v1.7.0-infrastructure-observability.md",
+      "accessCount": 1,
+      "lastAccessed": 1782951759741,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782951894221,
+      "type": "file"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "accessCount": 1,
+      "lastAccessed": 1782951906695,
+      "type": "file"
+    },
+    {
+      "path": "lib/analytics.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782951981048,
+      "type": "file"
+    },
+    {
+      "path": "proxy.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782952115824,
+      "type": "file"
+    },
+    {
+      "path": "next.config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782952217214,
+      "type": "file"
+    },
+    {
+      "path": "components/update-toast.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782952227439,
+      "type": "file"
+    },
+    {
+      "path": "public/manifest.json",
+      "accessCount": 1,
+      "lastAccessed": 1782952233076,
+      "type": "file"
+    },
+    {
+      "path": "app/(main)/teacher/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782952324975,
+      "type": "file"
+    },
+    {
+      "path": "app/api/classrooms/route.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782952331322,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.3.0-loop-state.md",
+      "accessCount": 1,
+      "lastAccessed": 1782952650151,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.1.0-i18n-seo.md",
+      "accessCount": 1,
+      "lastAccessed": 1782952684134,
       "type": "file"
     }
   ],

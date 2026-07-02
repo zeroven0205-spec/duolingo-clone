@@ -15,7 +15,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useExitModal } from "@/store/use-exit-modal";
-import { useTranslation } from "./locale-provider";
+import { useTranslation } from "../locale-provider";
 
 export const ExitModal = () => {
   const router = useRouter();

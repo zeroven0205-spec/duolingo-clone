@@ -9,10 +9,13 @@ import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
 import db from "@/db/drizzle";
 import {
   getCourseById,
+  getCourseProgress,
+  getLessonPercentage,
   getUserProgress,
   getUserSubscription,
 } from "@/db/queries";
 import { challengeProgress, challenges, userProgress } from "@/db/schema";
+import posthog from "@/lib/analytics";
 
 export const upsertUserProgress = async (courseId: number) => {
   const { userId } = await auth();
@@ -49,6 +52,16 @@ export const upsertUserProgress = async (courseId: number) => {
     activeCourseId: courseId,
     userName: user.firstName || "User",
     userImageSrc: user.imageUrl || "/mascot.svg",
+  });
+
+  // Track user registration
+  posthog.capture({
+    distinctId: userId,
+    event: "user_registered",
+    properties: {
+      plan: "free",
+      course: course.title,
+    },
   });
 
   revalidatePath("/courses");
@@ -89,12 +102,26 @@ export const reduceHearts = async (challengeId: number) => {
 
   if (currentUserProgress.hearts === 0) return { error: "hearts" };
 
+  const newHearts = Math.max(currentUserProgress.hearts - 1, 0);
+
   await db
     .update(userProgress)
     .set({
-      hearts: Math.max(currentUserProgress.hearts - 1, 0),
+      hearts: newHearts,
     })
     .where(eq(userProgress.userId, userId));
+
+  // Track hearts exhaustion (key conversion point)
+  if (newHearts === 0) {
+    posthog.capture({
+      distinctId: userId,
+      event: "hearts_exhausted",
+      properties: {
+        streak: currentUserProgress.streak,
+        courseId: currentUserProgress.activeCourseId,
+      },
+    });
+  }
 
   revalidatePath("/shop");
   revalidatePath("/learn");
@@ -124,4 +151,25 @@ export const refillHearts = async () => {
   revalidatePath("/learn");
   revalidatePath("/quests");
   revalidatePath("/leaderboard");
+};
+
+export const completeLesson = async (lessonId: number) => {
+  const { userId } = await auth();
+  if (!userId) throw new Error("Unauthorized.");
+
+  const courseProgress = await getCourseProgress();
+  const percentage = await getLessonPercentage();
+
+  // Track lesson completion
+  posthog.capture({
+    distinctId: userId,
+    event: "lesson_completed",
+    properties: {
+      lessonId,
+      courseId: courseProgress?.activeLesson?.unit?.courseId,
+      score: percentage,
+    },
+  });
+
+  return { success: true, percentage };
 };

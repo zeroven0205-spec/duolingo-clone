@@ -4,6 +4,7 @@ export const siteConfig: Metadata = {
   title: "Lingo - 语言学习平台",
   description:
     "Lingo 是一款互动式语言学习平台，提供课程、测验和进度追踪。支持英语、西班牙语、法语、日语等多语言学习。",
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "zh_CN",

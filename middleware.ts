@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 const LOCALE_COOKIE = "locale";
 const SUPPORTED = ["en", "zh"];
 
-export function middleware(request: NextRequest) {
+const isPublicRoute = createRouteMatcher([
+  "/",
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+  "/api/webhooks/stripe",
+]);
+
+export default clerkMiddleware(async (auth, request) => {
+  // Handle locale
   const response = NextResponse.next();
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
 
@@ -20,9 +29,19 @@ export function middleware(request: NextRequest) {
     response.headers.set("x-locale", cookieLocale);
   }
 
+  // Handle auth
+  if (!isPublicRoute(request)) {
+    await auth.protect();
+  }
+
   return response;
-}
+});
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    // Always run for API routes
+    "/(api|trpc)(.*)",
+  ],
 };

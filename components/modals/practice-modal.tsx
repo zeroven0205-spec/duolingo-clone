@@ -14,7 +14,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { usePracticeModal } from "@/store/use-practice-modal";
-import { useTranslation } from "./locale-provider";
+import { useTranslation } from "../locale-provider";
 
 export const PracticeModal = () => {
   const [isClient, setIsClient] = useState(false);

@@ -39,3 +39,7 @@ next-env.d.ts
 # testing tools
 /ngrok
 /stripe
+
+.harness-loop
+.omc
+

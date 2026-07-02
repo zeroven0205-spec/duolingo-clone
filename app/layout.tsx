@@ -33,9 +33,6 @@ export default async function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        layout: {
-          logoImageUrl: "/favicon.ico",
-        },
         variables: {
           colorPrimary: "#22C55E",
         },

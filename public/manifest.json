@@ -1,0 +1,21 @@
+{
+  "name": "Lingo Language Learning",
+  "short_name": "Lingo",
+  "description": "Learn languages for free with gamified lessons",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#22C55E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/mascot.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "games"],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

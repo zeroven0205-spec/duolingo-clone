@@ -15,7 +15,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useHeartsModal } from "@/store/use-hearts-modal";
-import { useTranslation } from "./locale-provider";
+import { useTranslation } from "../locale-provider";
 
 export const HeartsModal = () => {
   const router = useRouter();
