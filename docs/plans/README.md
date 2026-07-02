@@ -1,87 +1,40 @@
 # Plans 索引
 
-## Active
+> ⚠️ 新版 Roadmap 已移至 `docs/ROADMAP.md`
 
-*无 Active 版本*
+## 版本记录
 
-## Completed
+### Phase 0: 紧急修复
 
 | 版本 | 日期 | 说明 |
 | ---- | ---- | ---- |
-| [v1.0.0-commercialization.md](./completed/v1.0.0-commercialization.md) | 2026-07-01 | 商业化基线（partial）|
-| [v1.1.0-i18n-seo.md](./completed/v1.1.0-i18n-seo.md) | 2026-07-01 | i18n + SEO |
-| [v1.2.0-verify-stripe.md](./completed/v1.2.0-verify-stripe.md) | 2026-07-02 | verify 真实化 + Stripe + PostHog |
-| [v1.3.0-loop-state.md](./completed/v1.3.0-loop-state.md) | 2026-07-01 | Loop 状态更新（无功能变更）|
-| [v1.4.0-pwa-offline.md](./completed/v1.4.0-pwa-offline.md) | 2026-07-02 | PWA 离线 + manifest |
-| [v1.5.0-b2b-school.md](./completed/v1.5.0-b2b-school.md) | 2026-07-02 | B2B 多租户 + 教师 Dashboard |
-| [v1.6.0-adaptive-ai.md](./completed/v1.6.0-adaptive-ai.md) | 2026-07-02 | 自适应学习 + AI 发音 |
-| [v1.7.0-infrastructure-observability.md](./completed/v1.7.0-infrastructure-observability.md) | 2026-07-02 | 中间件合并 + 基础设施 |
-| [v1.8.0-streak-ui-social.md](./completed/v1.8.0-streak-ui-social.md) | 2026-07-02 | 签到 UI + 好友系统 |
 | [v1.9.0-bugfix-stability.md](./completed/v1.9.0-bugfix-stability.md) | 2026-07-02 | Bug 修复 + 稳定性 |
 
----
+### Phase 0: 工程化质量
 
-## Roadmap 概览
-
-```
-v1.0.0 ✅ 商业化基线 (partial)
-v1.1.0 ✅ i18n + SEO
-v1.2.0 ✅ verify 真实化 + Stripe + PostHog
-v1.3.0 ✅ Loop 状态更新（无功能变更）
-v1.4.0 ✅ PWA 离线 + manifest
-v1.5.0 ✅ B2B 多租户 + 教师 Dashboard
-v1.6.0 ✅ 自适应学习 + AI 发音
-v1.7.0 ✅ 中间件合并 + 基础设施
-v1.8.0 ✅ 签到 UI + 好友系统
-v1.9.0 ✅ Bug 修复 + 稳定性
-v2.0.0 📋 商业化发布（待规划）
-```
+| 版本 | 日期 | 说明 |
+| ---- | ---- | ---- |
+| [v2.0.0-engineering quality.md](./active/v2.0.0-engineering%20quality.md) | 2026-07-02 | ESLint 修复 + 测试覆盖 |
 
 ---
 
-## 已实现的功能
+## 完整路线图
 
-| 版本 | 功能 |
-| ---- | ---- |
-| v1.0.0 | 隐私政策、服务条款、Cookie Banner |
-| v1.1.0 | i18n (en/zh)、sitemap/robots |
-| v1.2.0 | verify.sh 真实化、PostHog 埋点、Stripe Webhook |
-| v1.3.0 | Loop 状态更新（无功能变更）|
-| v1.4.0 | PWA manifest、Service Worker 配置、UpdateToast |
-| v1.5.0 | 多租户 Schema，教师 Dashboard、班级管理 API |
-| v1.6.0 | Spaced Repetition、Web Speech API、签到奖励逻辑 |
-| v1.7.0 | 中间件合并（Clerk + locale）|
-| v1.8.0 | StreakBadge、StreakToast、好友系统、/friends 页面 |
-| v1.9.0 | /privacy 路由公开、i18n 修复、/demo 页面、Clerk 弹窗隐藏 |
+详见: [docs/ROADMAP.md](../ROADMAP.md)
 
 ---
 
-## 遗留任务
+## 已完成版本 (v1.0.0 - v1.9.0)
 
-| 优先级 | 任务 | 影响 |
-| ------ | ---- | ---- |
-| 🟡 P1 | 数据库迁移（pnpm db:push）| 新 Schema 无法生效 |
-| 🟢 P2 | README/CHANGELOG 更新 | 文档同步 |
-
----
-
-## 新增代码文件 (v1.8.0 - v1.9.0)
-
-```
-v1.8.0:
-  components/streak-toast.tsx    # 签到奖励 Toast 提示
-  components/streak-badge.tsx   # 连续签到徽章
-  app/(main)/friends/page.tsx  # 好友页面
-  app/(main)/friends/friends-list.tsx
-  app/api/friends/route.ts     # 好友 API
-  db/schema-social.ts          # 好友数据模型
-
-v1.9.0:
-  app/(marketing)/demo/page.tsx  # Demo 体验页面
-  middleware.ts                  # 路由修复
-  components/locale-loader.tsx   # i18n 修复
-  app/(main)/courses/list.tsx   # 添加 toast 反馈
-  app/globals.css               # 隐藏 Clerk 弹窗
-```
-
-详见: [monetization-plan-2026-07-01.md](../business/monetization-plan-2026-07-01.md)
+| 版本 | 日期 | 说明 |
+| ---- | ---- | ---- |
+| v1.0.0 | 2026-07-01 | 商业化基线 |
+| v1.1.0 | 2026-07-01 | i18n + SEO |
+| v1.2.0 | 2026-07-02 | verify + Stripe + PostHog |
+| v1.3.0 | 2026-07-01 | Loop 状态更新 |
+| v1.4.0 | 2026-07-02 | PWA 离线 |
+| v1.5.0 | 2026-07-02 | B2B 多租户 |
+| v1.6.0 | 2026-07-02 | 自适应学习 + AI 发音 |
+| v1.7.0 | 2026-07-02 | 中间件合并 |
+| v1.8.0 | 2026-07-02 | 签到 UI + 好友 |
+| v1.9.0 | 2026-07-02 | Bug 修复 |

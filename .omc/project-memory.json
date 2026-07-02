@@ -246,8 +246,8 @@
   "hotPaths": [
     {
       "path": "docs/plans/README.md",
-      "accessCount": 16,
-      "lastAccessed": 1782990108457,
+      "accessCount": 18,
+      "lastAccessed": 1782996392804,
       "type": "file"
     },
     {
@@ -293,15 +293,15 @@
       "type": "file"
     },
     {
-      "path": "docs/plans/completed/v1.0.0-commercialization.md",
-      "accessCount": 3,
-      "lastAccessed": 1782951784339,
+      "path": "scripts/verify.sh",
+      "accessCount": 4,
+      "lastAccessed": 1782996249870,
       "type": "file"
     },
     {
-      "path": "scripts/verify.sh",
+      "path": "docs/plans/completed/v1.0.0-commercialization.md",
       "accessCount": 3,
-      "lastAccessed": 1782951902101,
+      "lastAccessed": 1782951784339,
       "type": "file"
     },
     {
@@ -368,6 +368,12 @@
       "path": "components/user-progress.tsx",
       "accessCount": 2,
       "lastAccessed": 1782953100672,
+      "type": "file"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "accessCount": 2,
+      "lastAccessed": 1782996258039,
       "type": "file"
     },
     {
@@ -458,12 +464,6 @@
       "path": "package.json",
       "accessCount": 1,
       "lastAccessed": 1782951894221,
-      "type": "file"
-    },
-    {
-      "path": "eslint.config.mjs",
-      "accessCount": 1,
-      "lastAccessed": 1782951906695,
       "type": "file"
     },
     {
