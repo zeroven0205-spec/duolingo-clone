@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { StreakBadge } from "@/components/streak-badge";
 import { courses } from "@/db/schema";
 
 type UserProgressProps = {
   activeCourse: typeof courses.$inferSelect;
   hearts: number;
   points: number;
+  streak: number;
   hasActiveSubscription: boolean;
 };
 
@@ -16,6 +18,7 @@ export const UserProgress = ({
   activeCourse,
   hearts,
   points,
+  streak,
   hasActiveSubscription,
 }: UserProgressProps) => {
   return (
@@ -29,6 +32,12 @@ export const UserProgress = ({
             width={32}
             height={32}
           />
+        </Button>
+      </Link>
+
+      <Link href="/leaderboard">
+        <Button variant="ghost">
+          <StreakBadge streak={streak} />
         </Button>
       </Link>
 

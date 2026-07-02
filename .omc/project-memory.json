@@ -246,14 +246,20 @@
   "hotPaths": [
     {
       "path": "docs/plans/README.md",
-      "accessCount": 10,
-      "lastAccessed": 1782952673630,
+      "accessCount": 12,
+      "lastAccessed": 1782953286255,
       "type": "file"
     },
     {
       "path": "lib/speech评估.ts",
       "accessCount": 6,
       "lastAccessed": 1782951249052,
+      "type": "file"
+    },
+    {
+      "path": "db/drizzle.ts",
+      "accessCount": 6,
+      "lastAccessed": 1782953119252,
       "type": "file"
     },
     {
@@ -275,9 +281,9 @@
       "type": "file"
     },
     {
-      "path": "db/drizzle.ts",
+      "path": "docs/plans/active/v1.8.0-streak-ui-social.md",
       "accessCount": 4,
-      "lastAccessed": 1782952351723,
+      "lastAccessed": 1782953065928,
       "type": "file"
     },
     {
@@ -308,12 +314,6 @@
       "path": "lib/tenant.ts",
       "accessCount": 3,
       "lastAccessed": 1782952386960,
-      "type": "file"
-    },
-    {
-      "path": "docs/plans/active/v1.8.0-streak-ui-social.md",
-      "accessCount": 3,
-      "lastAccessed": 1782952605041,
       "type": "file"
     },
     {
@@ -356,6 +356,18 @@
       "path": "db/schema-tenant.ts",
       "accessCount": 2,
       "lastAccessed": 1782952379174,
+      "type": "file"
+    },
+    {
+      "path": "app/(main)/learn/page.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1782953097524,
+      "type": "file"
+    },
+    {
+      "path": "components/user-progress.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1782953100672,
       "type": "file"
     },
     {
@@ -506,6 +518,30 @@
       "path": "docs/plans/completed/v1.1.0-i18n-seo.md",
       "accessCount": 1,
       "lastAccessed": 1782952684134,
+      "type": "file"
+    },
+    {
+      "path": "components/streak-toast.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782953072373,
+      "type": "file"
+    },
+    {
+      "path": "components/streak-badge.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782953073628,
+      "type": "file"
+    },
+    {
+      "path": "app/(main)/learn/header.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782953087574,
+      "type": "file"
+    },
+    {
+      "path": "db/schema-social.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782953109857,
       "type": "file"
     }
   ],
