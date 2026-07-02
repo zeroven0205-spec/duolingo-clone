@@ -9,12 +9,7 @@
 | 版本 | 日期 | 说明 |
 | ---- | ---- | ---- |
 | [v1.9.0-bugfix-stability.md](./completed/v1.9.0-bugfix-stability.md) | 2026-07-02 | Bug 修复 + 稳定性 |
-
-### Phase 0: 工程化质量
-
-| 版本 | 日期 | 说明 |
-| ---- | ---- | ---- |
-| [v2.0.0-engineering quality.md](./active/v2.0.0-engineering%20quality.md) | 2026-07-02 | ESLint 修复 + 测试覆盖 |
+| [v2.0.0-engineering-quality.md](./completed/v2.0.0-engineering-quality.md) | 2026-07-02 | ESLint 修复 + 测试覆盖 + CHANGELOG |
 
 ---
 
@@ -24,7 +19,7 @@
 
 ---
 
-## 已完成版本 (v1.0.0 - v1.9.0)
+## 已完成版本 (v1.0.0 - v2.0.0)
 
 | 版本 | 日期 | 说明 |
 | ---- | ---- | ---- |
@@ -38,3 +33,18 @@
 | v1.7.0 | 2026-07-02 | 中间件合并 |
 | v1.8.0 | 2026-07-02 | 签到 UI + 好友 |
 | v1.9.0 | 2026-07-02 | Bug 修复 |
+| **v2.0.0** | **2026-07-02** | **工程化质量 + 测试** |
+
+---
+
+## v2.0.0 关键指标
+
+| 指标 | 状态 |
+| ---- | ------ |
+| ESLint 配置 | ✅ 修复 |
+| Vitest 测试 | ✅ 18 测试通过 |
+| verify script | ✅ 添加到 package.json |
+| CHANGELOG | ✅ 完整历史 |
+| Secret 扫描 | ✅ 无硬编码密钥 |
+
+---
