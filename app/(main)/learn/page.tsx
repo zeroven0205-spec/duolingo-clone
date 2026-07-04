@@ -5,6 +5,7 @@ import { Promo } from "@/components/promo";
 import { Quests } from "@/components/quests";
 import { StickyWrapper } from "@/components/sticky-wrapper";
 import { StreakToast } from "@/components/streak-toast";
+import { StreakCelebration } from "@/components/streak-celebration";
 import { UserProgress } from "@/components/user-progress";
 import { updateStreakAndClaimRewards } from "@/actions/user-streak";
 import {
@@ -49,6 +50,7 @@ const LearnPage = async () => {
   return (
     <>
       <StreakToast streakResult={streakResult} />
+      <StreakCelebration streak={userProgress.streak} />
       <div className="flex flex-row-reverse gap-[48px] px-6">
         <StickyWrapper>
           <UserProgress

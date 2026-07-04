@@ -139,6 +139,31 @@ export const userProgress = pgTable("user_progress", {
   points: integer("points").notNull().default(0),
   streak: integer("streak").notNull().default(0),
   lastLoginDate: timestamp("last_login_date"),
+  /**
+   * When set, the next missed day is forgiven (streak held).
+   * Shop items set this field directly with an expiry timestamp.
+   */
+  streakProtectionUntil: timestamp("streak_protection_until"),
+  /**
+   * When set, the next lesson completion awards 2× XP.
+   */
+  xpBoostUntil: timestamp("xp_boost_until"),
+  /**
+   * XP earned since the last weekly reset. Used by the weekly leaderboard.
+   */
+  pointsWeekly: integer("points_weekly").notNull().default(0),
+  /**
+   * XP earned since the last monthly reset. Used by the monthly leaderboard.
+   */
+  pointsMonthly: integer("points_monthly").notNull().default(0),
+  /**
+   * Timestamp of the last weekly counter reset.
+   */
+  weeklyResetAt: timestamp("weekly_reset_at"),
+  /**
+   * Timestamp of the last monthly counter reset.
+   */
+  monthlyResetAt: timestamp("monthly_reset_at"),
 });
 
 export const userProgressRelations = relations(userProgress, ({ one }) => ({

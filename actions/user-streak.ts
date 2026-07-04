@@ -54,8 +54,19 @@ export async function updateStreakAndClaimRewards() {
       // Consecutive day - increment streak
       newStreak = user.streak + 1;
     } else {
-      // Streak broken - reset to 1
-      newStreak = 1;
+      // Streak broken — but if the user bought a Streak Freeze/Shield that's
+      // still valid, hold the streak and consume one day of protection.
+      const protection = user.streakProtectionUntil;
+      if (protection && protection.getTime() > now.getTime()) {
+        newStreak = user.streak + 1;
+        rewardClaimed = "Streak Freeze saved your streak! ❄️";
+        await db
+          .update(userProgress)
+          .set({ streakProtectionUntil: null })
+          .where(eq(userProgress.userId, userId));
+      } else {
+        newStreak = 1;
+      }
     }
   }
 

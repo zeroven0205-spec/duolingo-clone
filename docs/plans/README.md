@@ -10,6 +10,7 @@
 | ---- | ---- | ---- |
 | [v1.9.0-bugfix-stability.md](./completed/v1.9.0-bugfix-stability.md) | 2026-07-02 | Bug 修复 + 稳定性 |
 | [v2.0.0-engineering-quality.md](./completed/v2.0.0-engineering-quality.md) | 2026-07-02 | ESLint 修复 + 测试覆盖 + CHANGELOG |
+| [v2.1.0-gamification.md](./completed/v2.1.0-gamification.md) | 2026-07-04 | 游戏化 + 留存机制 (Streak 庆祝/保护/Shop/排行榜周期/任务动画) |
 
 ---
 
@@ -33,7 +34,8 @@
 | v1.7.0 | 2026-07-02 | 中间件合并 |
 | v1.8.0 | 2026-07-02 | 签到 UI + 好友 |
 | v1.9.0 | 2026-07-02 | Bug 修复 |
-| **v2.0.0** | **2026-07-02** | **工程化质量 + 测试** |
+| v2.0.0 | 2026-07-02 | 工程化质量 + 测试 |
+| **v2.1.0** | **2026-07-04** | **游戏化 + 留存机制** |
 
 ---
 

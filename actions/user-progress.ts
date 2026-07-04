@@ -5,7 +5,7 @@ import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
+import { MAX_HEARTS, MONTH_IN_MS, POINTS_TO_REFILL, WEEK_IN_MS } from "@/constants";
 import db from "@/db/drizzle";
 import {
   getCourseById,
@@ -159,6 +159,28 @@ export const completeLesson = async (lessonId: number) => {
 
   const courseProgress = await getCourseProgress();
   const percentage = await getLessonPercentage();
+  const user = await getUserProgress();
+
+  // Bump weekly / monthly counters (rolling windows — reset if stale).
+  if (user) {
+    const now = new Date();
+    const weeklyStale =
+      !user.weeklyResetAt ||
+      now.getTime() - user.weeklyResetAt.getTime() > WEEK_IN_MS;
+    const monthlyStale =
+      !user.monthlyResetAt ||
+      now.getTime() - user.monthlyResetAt.getTime() > MONTH_IN_MS;
+
+    await db
+      .update(userProgress)
+      .set({
+        pointsWeekly: weeklyStale ? 0 : user.pointsWeekly,
+        weeklyResetAt: weeklyStale ? now : user.weeklyResetAt,
+        pointsMonthly: monthlyStale ? 0 : user.pointsMonthly,
+        monthlyResetAt: monthlyStale ? now : user.monthlyResetAt,
+      })
+      .where(eq(userProgress.userId, userId));
+  }
 
   // Track lesson completion
   posthog.capture({

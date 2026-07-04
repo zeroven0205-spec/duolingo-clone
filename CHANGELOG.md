@@ -8,6 +8,27 @@ All notable changes to this project will be documented in this file.
 - Comprehensive roadmap (docs/ROADMAP.md)
 - v2.0.0 Engineering Quality plan
 
+## [v2.1.0] - 2026-07-04
+
+### Added
+- Streak Celebration overlay (`components/streak-celebration.tsx`) — fires a confetti burst + badge toast at 3 / 7 / 30 / 100 / 365 day milestones
+- Streak Freeze / Streak Shield shop items — consume `streakProtectionUntil` on a missed day instead of resetting the streak
+- XP Boost shop item — sets `xpBoostUntil` flag for the next lesson
+- Extra Hearts Pack shop item — +5 hearts (now allowed above `MAX_HEARTS` for pack-only top-ups)
+- `SHOP_CATALOG` constant + `actions/shop.ts` (purchaseStreakFreeze, purchaseStreakShield, purchaseXpBoost, purchaseHeartsPack)
+- Leaderboard period tabs — weekly / monthly / all-time, backed by new `getTopUsersForPeriod` query and `pointsWeekly` / `pointsMonthly` counters
+- Quest completion celebration — confetti burst + "✓ 完成" badge the first time a milestone quest is reached (per session)
+
+### Changed
+- `components/streak-badge.tsx` is now a pure display component with a flame pulse animation; milestone logic moved to `streak-celebration.tsx`
+- `components/purchase-celebration.tsx` rewritten on `react-confetti` (the previously-imported `canvas-confetti` package was not installed)
+- `actions/user-streak.ts` consumes `streakProtectionUntil` before resetting a streak
+- `actions/user-progress.ts:completeLesson` lazily resets weekly / monthly XP counters when stale
+
+### Docs
+- Added `docs/deployment/v2.1.0.md` covering schema migration, env vars, business-rule verification, feature flags, monitoring hooks, and rollback plan
+- Registered deployment doc in `docs/README.md` index
+
 ## [v1.9.0] - 2026-07-02
 
 ### Added

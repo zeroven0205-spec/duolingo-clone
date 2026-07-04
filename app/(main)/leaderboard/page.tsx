@@ -9,15 +9,34 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { UserProgress } from "@/components/user-progress";
 import {
-  getTopTenUsers,
+  getTopUsersForPeriod,
   getUserProgress,
   getUserSubscription,
+  type LeaderboardPeriod,
 } from "@/db/queries";
 
-const LeaderboardPage = async () => {
+import { PeriodTabs } from "./period-tabs";
+
+const VALID_PERIODS: LeaderboardPeriod[] = ["weekly", "monthly", "all-time"];
+
+function parsePeriod(value: string | string[] | undefined): LeaderboardPeriod {
+  const candidate = Array.isArray(value) ? value[0] : value;
+  return VALID_PERIODS.includes(candidate as LeaderboardPeriod)
+    ? (candidate as LeaderboardPeriod)
+    : "all-time";
+}
+
+const LeaderboardPage = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ period?: string | string[] }>;
+}) => {
+  const params = await searchParams;
+  const period = parsePeriod(params?.period);
+
   const userProgressData = getUserProgress();
   const userSubscriptionData = getUserSubscription();
-  const leaderboardData = getTopTenUsers();
+  const leaderboardData = getTopUsersForPeriod(period);
 
   const [userProgress, userSubscription, leaderboard] = await Promise.all([
     userProgressData,
@@ -59,25 +78,27 @@ const LeaderboardPage = async () => {
             看看你在社区学习者中的排名
           </p>
 
+          <PeriodTabs current={period} />
+
           <Separator className="mb-4 h-0.5 rounded-full" />
-          {leaderboard.map((userProgress, i) => (
+          {leaderboard.map((entry, i) => (
             <div
-              key={userProgress.userId}
+              key={entry.userId}
               className="flex w-full items-center rounded-xl p-2 px-4 hover:bg-gray-200/50"
             >
               <p className="mr-4 font-bold text-lime-700">{i + 1}</p>
 
               <Avatar className="ml-3 mr-6 h-12 w-12 border bg-green-500">
                 <AvatarImage
-                  src={userProgress.userImageSrc}
+                  src={entry.userImageSrc}
                   className="object-cover"
                 />
               </Avatar>
 
               <p className="flex-1 font-bold text-neutral-800">
-                {userProgress.userName}
+                {entry.userName}
               </p>
-              <p className="text-muted-foreground">{userProgress.points} XP</p>
+              <p className="text-muted-foreground">{entry.points} XP</p>
             </div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 import { cache } from "react";
 
 import { auth } from "@clerk/nextjs/server";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 
 import db from "./drizzle";
 import {
@@ -245,6 +245,39 @@ export const getTopTenUsers = cache(async () => {
 
   return data;
 });
+
+export type LeaderboardPeriod = "weekly" | "monthly" | "all-time";
+
+/**
+ * Returns the top 10 users ranked by the chosen period.
+ * `weekly` / `monthly` use the rolling counter that resets when stale.
+ */
+export const getTopUsersForPeriod = cache(
+  async (period: LeaderboardPeriod = "all-time") => {
+    const { userId } = await auth();
+    if (!userId) return [];
+
+    const pointsColumn =
+      period === "weekly"
+        ? userProgress.pointsWeekly
+        : period === "monthly"
+          ? userProgress.pointsMonthly
+          : userProgress.points;
+
+    const data = await db
+      .select({
+        userId: userProgress.userId,
+        userName: userProgress.userName,
+        userImageSrc: userProgress.userImageSrc,
+        points: pointsColumn,
+      })
+      .from(userProgress)
+      .orderBy(desc(pointsColumn))
+      .limit(10);
+
+    return data;
+  }
+);
 
 export const updateUserStreak = async (userId: string) => {
   const user = await db.query.userProgress.findFirst({

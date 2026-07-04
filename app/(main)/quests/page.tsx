@@ -3,10 +3,9 @@ import { redirect } from "next/navigation";
 
 import { FeedWrapper } from "@/components/feed-wrapper";
 import { Promo } from "@/components/promo";
+import { QuestsList } from "@/components/quests-list";
 import { StickyWrapper } from "@/components/sticky-wrapper";
-import { Progress } from "@/components/ui/progress";
 import { UserProgress } from "@/components/user-progress";
-import { QUESTS } from "@/constants";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
 
 const QuestsPage = async () => {
@@ -46,33 +45,7 @@ const QuestsPage = async () => {
             通过获取积分完成任务
           </p>
 
-          <ul className="w-full">
-            {QUESTS.map((quest) => {
-              const progress = (userProgress.points / quest.value) * 100;
-
-              return (
-                <div
-                  className="flex w-full items-center gap-x-4 border-t-2 p-4"
-                  key={quest.title}
-                >
-                  <Image
-                    src="/points.svg"
-                    alt="Points"
-                    width={60}
-                    height={60}
-                  />
-
-                  <div className="flex w-full flex-col gap-y-2">
-                    <p className="text-xl font-bold text-neutral-700">
-                      {quest.title}
-                    </p>
-
-                    <Progress value={progress} className="h-3" />
-                  </div>
-                </div>
-              );
-            })}
-          </ul>
+          <QuestsList points={userProgress.points} />
         </div>
       </FeedWrapper>
     </div>
