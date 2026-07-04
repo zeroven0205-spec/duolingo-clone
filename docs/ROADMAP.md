@@ -99,7 +99,46 @@ v2.3.0 **不是计划**，是 3 个互斥的 scope 分支。**哪个触发条件
 
 ---
 
+### 场景 D · 工程卫生 `engineering_hygiene`
+
+**触发**：[feature-inventory.md](product/feature-inventory.md) 审计发现 ≥ 1 项高严重度代码债（无外部数据依赖），或 PostHog dashboard 配完前必须先有结构化日志。
+
+**当前已确认的真缺口**（来自 [feature-inventory.md](product/feature-inventory.md) 审计）：
+
+| 项 | 来源 plan | 估时 |
+| ---- | ---- | ---- |
+| **结构化日志**（pino / winston / next/log） — server actions / API routes 加 request-id + userId + duration | v1.7.0 GAP-OBS（**7 个 plan 跨度未实施**） | 0.5d |
+| **AGENTS.md 扩展到 100+ 行** — 当前 33 行，覆盖测试 / 部署 / 调试 / schema 迁移指引 | v2.0.0 LING-P2-AGENTS | 0.25d |
+| `subscription_started` 埋点 caller — Stripe webhook 调一下 | v1.2.0 LING-P1-3 | 0.1d |
+| **合计** | | **~0.85d** |
+
+**不做**：
+- ❌ `/account` 订阅管理页（Stripe Customer Portal 链接可替代）
+- ❌ 多租户实际隔离（产品定位非 B2B）
+- ❌ D7 调度 churn_risk 埋点（需调度基础设施，先搁置）
+
+**验收**：
+- 任一 server action 报错时，PostHog 收到对应事件 + console 输出一行结构化 log（含 reqId / userId / action / duration）
+- `wc -l AGENTS.md` ≥ 100
+- Stripe webhook `checkout.session.completed` 事件触发 `subscription_started` 埋点
+
+**为什么单独成一个场景**：这些是低风险、低估时的"卫生债"。**应在场景 A/B/C 任一启动前完成**，否则接 A/B/C 时调试会很难（场景 B 成就系统尤其依赖日志）。可与场景 A/B/C 任意一个**合并发布**。
+
+---
+
 ### 决策树
+
+```
+v2.2.0 上线 + 观察 4 周
+    │
+    ├─ 用户卡在 Unit 2 / 复习队列空 → 启用场景 A
+    ├─ PostHog 显示高粘性 + 用户要成就 → 启用场景 B
+    ├─ UI 反馈 ≥ 3 条 / zh-en 完整度达标 → 启用场景 C
+    │
+    ├─ 任意启动前 / 调试困难 → 启用场景 D（可与 A/B/C 合并发布）
+    │
+    └─ 都不触发 → v2.3.0 跳过，继续打磨现有功能
+```
 
 ```
 v2.2.0 上线 + 观察 4 周
@@ -110,7 +149,7 @@ v2.2.0 上线 + 观察 4 周
     └─ 都不触发 → v2.3.0 跳过，继续打磨现有功能
 ```
 
-### 兜底触发（未在场景 A/B/C 中）
+### 兜底触发（未在场景 A/B/C/D 中）
 
 | 决策 | 触发条件 |
 | ---- | ---- |
@@ -119,7 +158,7 @@ v2.2.0 上线 + 观察 4 周
 | AI 对话 / 智能发音 | 有 LLM API 预算 + 数据脱敏方案 |
 | 好友 / 学习小组深化 | 已有好友功能使用率 ≥ 20% |
 
-> 这些触发条件**未成立前不规划**。一旦成立，单独成项，不挤进 A/B/C。
+> 这些触发条件**未成立前不规划**。一旦成立，单独成项，不挤进 A/B/C/D。
 
 ---
 
