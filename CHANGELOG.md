@@ -7,6 +7,31 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Comprehensive roadmap (docs/ROADMAP.md)
 - v2.0.0 Engineering Quality plan
+- v2.2.0 plan (`docs/plans/active/v2.2.0-content-and-cleanup.md`) — first-principles scope reduction; closes v2.1.0 debt + wires up half-built features (review queue, spaced repetition, i18n audit). 4.5 人日.
+
+### Changed
+- `docs/ROADMAP.md` rewritten — no commitments beyond v2.2.0; future versions gated on data-driven decision triggers
+
+## [v2.2.0] - 2026-07-04
+
+### Added
+- `lib/feature-flag.ts` — lightweight flag framework backed by env vars (default OFF)
+- `app/(main)/review/page.tsx` + `components/review-session.tsx` — review queue UI (gated by `FLAG_REVIEW_QUEUE`)
+- `scripts/check-i18n.ts` — CI-friendly key consistency check between `messages/en.json` and `messages/zh.json` (wired into `pnpm check-i18n`)
+
+### Fixed
+- XP Boost now actually awards 2× XP on the next challenge completion and consumes `xpBoostUntil` (was writing the field but never reading it; correct injection point is `actions/challenge-progress.ts`, not `completeLesson`)
+- Hearts Pack purchase is now refused when `hearts === MAX_HEARTS` and the cap no longer silently inflates past `MAX_HEARTS`
+- PWA service worker now actually caches content — added `runtimeCaching` for fonts / static assets / course APIs / images in `next.config.ts` (previously SW registered but cached nothing, so offline = blank page)
+
+### Changed
+- `lib/speech评估.ts` → `lib/speech-evaluation.ts`; interfaces `Speech评估结果` / `Speech评估选项` → `SpeechEvalResult` / `SpeechEvalOptions` (pure rename, no logic change)
+- `app/(main)/shop/items.tsx` — Hearts Pack button now shows "已满" when full and is disabled
+- `actions/shop.ts` — `shop_v2` feature flag short-circuits all purchases; success path now emits `shop_item_purchased` PostHog event
+- `actions/user-streak.ts` — emits `streak_freeze_consumed` and `streak_milestone_reached` PostHog events
+- `components/review-session.tsx` — shows spaced-repetition box label via `getBoxLabel` instead of raw `Box N`
+- `components/user-progress.tsx` — adds "📚" link to `/review`
+- `messages/en.json` / `messages/zh.json` — removed unused `Footer` namespace (orphan translations)
 
 ## [v2.1.0] - 2026-07-04
 

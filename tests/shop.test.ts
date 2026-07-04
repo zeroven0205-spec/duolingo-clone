@@ -52,3 +52,28 @@ describe("Leaderboard Period Selection", () => {
     expect(VALID_PERIODS).toContain("all-time");
   });
 });
+
+describe("Shop Affordability (pure check)", () => {
+  test("user with 0 points cannot buy any item", () => {
+    const points = 0;
+    SHOP_CATALOG.forEach((item) => {
+      expect(points >= item.price).toBe(false);
+    });
+  });
+
+  test("user with 200 points can buy freeze + shield but not multiple", () => {
+    const points = 200;
+    expect(points >= SHOP_CATALOG.find((i) => i.id === "streak_freeze")!.price).toBe(true);
+    expect(points >= SHOP_CATALOG.find((i) => i.id === "streak_shield")!.price).toBe(true);
+    // Two freezes cost 200, leaves 0 — still affordable, but not two shields
+    expect(points >= SHOP_CATALOG.find((i) => i.id === "streak_freeze")!.price * 2).toBe(true);
+    expect(points >= SHOP_CATALOG.find((i) => i.id === "streak_shield")!.price * 2).toBe(false);
+  });
+
+  test("points_remaining is non-negative when affordable", () => {
+    const points = 150;
+    const item = SHOP_CATALOG.find((i) => i.id === "xp_boost")!;
+    const pointsRemaining = points - item.price;
+    expect(pointsRemaining).toBe(0);
+  });
+});

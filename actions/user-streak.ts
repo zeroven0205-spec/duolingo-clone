@@ -8,6 +8,7 @@ import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
 import db from "@/db/drizzle";
 import { userProgress, userSubscription } from "@/db/schema";
 import { getUserProgress, getUserSubscription } from "@/db/queries";
+import posthog from "@/lib/analytics";
 
 const DAY_IN_MS = 86_400_000;
 const STREAK_REWARDS = {
@@ -58,12 +59,18 @@ export async function updateStreakAndClaimRewards() {
       // still valid, hold the streak and consume one day of protection.
       const protection = user.streakProtectionUntil;
       if (protection && protection.getTime() > now.getTime()) {
+        const streakBefore = user.streak;
         newStreak = user.streak + 1;
         rewardClaimed = "Streak Freeze saved your streak! ❄️";
         await db
           .update(userProgress)
           .set({ streakProtectionUntil: null })
           .where(eq(userProgress.userId, userId));
+        posthog.capture({
+          distinctId: userId,
+          event: "streak_freeze_consumed",
+          properties: { streak_before: streakBefore, streak_after: newStreak },
+        });
       } else {
         newStreak = 1;
       }
@@ -74,6 +81,19 @@ export async function updateStreakAndClaimRewards() {
   const reward = STREAK_REWARDS[newStreak as keyof typeof STREAK_REWARDS];
   if (reward) {
     rewardClaimed = await distributeStreakReward(userId, reward);
+  }
+
+  // Analytics: milestone celebrations (3 / 7 / 30 / 100 / 365 days).
+  // Fired from the server-side action to avoid client-side tracking setup.
+  const STREAK_MILESTONES = [3, 7, 30, 100, 365] as const;
+  if (
+    (STREAK_MILESTONES as readonly number[]).includes(newStreak)
+  ) {
+    posthog.capture({
+      distinctId: userId,
+      event: "streak_milestone_reached",
+      properties: { milestone: newStreak },
+    });
   }
 
   // Update streak in database

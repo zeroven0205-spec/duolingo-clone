@@ -41,6 +41,12 @@ export const UserProgress = ({
         </Button>
       </Link>
 
+      <Link href="/review" aria-label="Review queue">
+        <Button variant="ghost" className="text-green-600">
+          📚
+        </Button>
+      </Link>
+
       <Link href="/shop">
         <Button variant="ghost" className="text-orange-500">
           <Image

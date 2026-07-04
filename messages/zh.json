@@ -52,13 +52,6 @@
     "incorrect": "错误",
     "try_again": "再试一次"
   },
-  "Footer": {
-    "croatian": "克罗地亚语",
-    "spanish": "西班牙语",
-    "french": "法语",
-    "italian": "意大利语",
-    "japanese": "日语"
-  },
   "Cookie": {
     "message": "我们使用 Cookie 来优化您的浏览体验。",
     "accept": "接受",

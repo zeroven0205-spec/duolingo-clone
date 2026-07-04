@@ -52,13 +52,6 @@
     "incorrect": "Incorrect",
     "try_again": "Try again"
   },
-  "Footer": {
-    "croatian": "Croatian",
-    "spanish": "Spanish",
-    "french": "French",
-    "italian": "Italian",
-    "japanese": "Japanese"
-  },
   "Cookie": {
     "message": "We use cookies to optimize your browsing experience.",
     "accept": "Accept",

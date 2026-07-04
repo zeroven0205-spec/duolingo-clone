@@ -14,7 +14,8 @@
     "db:push": "drizzle-kit push",
     "db:prod": "tsx ./scripts/prod.ts",
     "test": "vitest",
-    "verify": "vitest --run && eslint ."
+    "verify": "vitest --run && eslint .",
+    "check-i18n": "tsx scripts/check-i18n.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.4.3",

@@ -12,6 +12,8 @@ import {
 import db from "@/db/drizzle";
 import { userProgress } from "@/db/schema";
 import { getUserProgress } from "@/db/queries";
+import { isEnabled } from "@/lib/feature-flag";
+import posthog from "@/lib/analytics";
 
 const DAY_IN_MS = 86_400_000;
 
@@ -79,12 +81,15 @@ async function applyItemEffect(
     }
 
     case "hearts_pack": {
-      // Pack gives +5 hearts on top of the current cap; non-subscription
-      // users still hit MAX_HEARTS once they regenerate.
-      const newHearts = user.hearts + 5;
+      // Refuse when the user is already at the cap — no point charging
+      // points for nothing. Mirrors the behaviour of `refillHearts` which
+      // also blocks when hearts === MAX_HEARTS.
+      if (user.hearts >= MAX_HEARTS) {
+        throw new ShopError("Hearts are already full.");
+      }
       await db
         .update(userProgress)
-        .set({ hearts: Math.min(newHearts, MAX_HEARTS + 5) })
+        .set({ hearts: Math.min(user.hearts + 5, MAX_HEARTS) })
         .where(eq(userProgress.userId, userId));
       return;
     }
@@ -109,16 +114,25 @@ async function chargeAndApply(
   successMessage: string
 ): Promise<{ success: true; message: string } | { success: false; error: string }> {
   try {
+    if (!isEnabled("shop_v2")) {
+      throw new ShopError("Shop is temporarily unavailable.");
+    }
     const { userId, item, user } = await requireUserAndItem(itemId);
     if (user.points < item.price) {
       throw new ShopError("Not enough points.");
     }
+    const pointsRemaining = user.points - item.price;
     await db
       .update(userProgress)
-      .set({ points: user.points - item.price })
+      .set({ points: pointsRemaining })
       .where(eq(userProgress.userId, userId));
     await applyItemEffect(userId, user, itemId);
     revalidateShopPaths();
+    posthog.capture({
+      distinctId: userId,
+      event: "shop_item_purchased",
+      properties: { item_id: itemId, price: item.price, points_remaining: pointsRemaining },
+    });
     return { success: true, message: successMessage };
   } catch (error) {
     return {

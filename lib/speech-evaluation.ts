@@ -5,14 +5,14 @@
  * Falls back gracefully if the API is not available.
  */
 
-export interface Speech评估结果 {
+export interface SpeechEvalResult {
   score: number; // 0-100
   transcript: string;
   feedback: string;
   isGood: boolean;
 }
 
-export interface Speech评估选项 {
+export interface SpeechEvalOptions {
   expectedText: string;
   language?: string; // BCP-47 language tag, e.g., "en-US", "es-ES"
   continuous?: boolean;
@@ -123,7 +123,7 @@ export function createSpeechRecognition(
 export async function 评估发音(
   expectedText: string,
   language: string = "en-US"
-): Promise<Speech评估结果> {
+): Promise<SpeechEvalResult> {
   return new Promise((resolve, reject) => {
     if (!isSpeechRecognitionAvailable()) {
       reject(new Error("Speech recognition not available"));
@@ -167,7 +167,7 @@ export async function 评估音频发音(
   expectedText: string,
   audioBlob: Blob,
   language: string = "en-US"
-): Promise<Speech评估结果> {
+): Promise<SpeechEvalResult> {
   // In a production app, this would:
   // 1. Convert blob to audio buffer
   // 2. Send to a speech-to-text API (e.g., Whisper, Google Speech-to-Text)

@@ -259,6 +259,54 @@
   },
   "hotPaths": [
     {
+      "path": "docs/plans/active/v2.2.0-content-and-cleanup.md",
+      "accessCount": 17,
+      "lastAccessed": 1783132729901,
+      "type": "file"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "accessCount": 13,
+      "lastAccessed": 1783133192672,
+      "type": "file"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "accessCount": 7,
+      "lastAccessed": 1783133856585,
+      "type": "file"
+    },
+    {
+      "path": "actions/shop.ts",
+      "accessCount": 6,
+      "lastAccessed": 1783133349696,
+      "type": "file"
+    },
+    {
+      "path": "actions/user-streak.ts",
+      "accessCount": 6,
+      "lastAccessed": 1783133408743,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/README.md",
+      "accessCount": 5,
+      "lastAccessed": 1783128179746,
+      "type": "file"
+    },
+    {
+      "path": "actions/challenge-progress.ts",
+      "accessCount": 5,
+      "lastAccessed": 1783133299165,
+      "type": "file"
+    },
+    {
+      "path": "app/(main)/shop/items.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1783133374509,
+      "type": "file"
+    },
+    {
       "path": "actions/user-progress.ts",
       "accessCount": 4,
       "lastAccessed": 1783097733768,
@@ -301,15 +349,39 @@
       "type": "file"
     },
     {
-      "path": "docs/plans/README.md",
+      "path": "messages/en.json",
       "accessCount": 3,
-      "lastAccessed": 1783120736101,
+      "lastAccessed": 1783129912871,
       "type": "file"
     },
     {
-      "path": "CHANGELOG.md",
+      "path": "messages/zh.json",
       "accessCount": 3,
-      "lastAccessed": 1783126891680,
+      "lastAccessed": 1783132390232,
+      "type": "file"
+    },
+    {
+      "path": "components/user-progress.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1783133475138,
+      "type": "file"
+    },
+    {
+      "path": "components/review-session.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1783133508971,
+      "type": "file"
+    },
+    {
+      "path": "tests/shop.test.ts",
+      "accessCount": 3,
+      "lastAccessed": 1783133684752,
+      "type": "file"
+    },
+    {
+      "path": "next.config.ts",
+      "accessCount": 3,
+      "lastAccessed": 1783133790251,
       "type": "file"
     },
     {
@@ -325,18 +397,6 @@
       "type": "file"
     },
     {
-      "path": "actions/user-streak.ts",
-      "accessCount": 2,
-      "lastAccessed": 1783097647085,
-      "type": "file"
-    },
-    {
-      "path": "app/(main)/shop/items.tsx",
-      "accessCount": 2,
-      "lastAccessed": 1783097663864,
-      "type": "file"
-    },
-    {
       "path": "app/(main)/leaderboard/page.tsx",
       "accessCount": 2,
       "lastAccessed": 1783120585148,
@@ -349,15 +409,15 @@
       "type": "file"
     },
     {
-      "path": "actions/shop.ts",
-      "accessCount": 2,
-      "lastAccessed": 1783120850369,
-      "type": "file"
-    },
-    {
       "path": "docs/README.md",
       "accessCount": 2,
       "lastAccessed": 1783126884467,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1783133565850,
       "type": "file"
     },
     {
@@ -370,12 +430,6 @@
       "path": "AGENTS.md",
       "accessCount": 1,
       "lastAccessed": 1783097447349,
-      "type": "file"
-    },
-    {
-      "path": "package.json",
-      "accessCount": 1,
-      "lastAccessed": 1783097455024,
       "type": "file"
     },
     {
@@ -394,12 +448,6 @@
       "path": "components/quests.tsx",
       "accessCount": 1,
       "lastAccessed": 1783097480723,
-      "type": "file"
-    },
-    {
-      "path": "components/user-progress.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1783097489333,
       "type": "file"
     },
     {
@@ -433,15 +481,63 @@
       "type": "file"
     },
     {
-      "path": "tests/shop.test.ts",
-      "accessCount": 1,
-      "lastAccessed": 1783120672897,
-      "type": "file"
-    },
-    {
       "path": "docs/deployment/v2.1.0.md",
       "accessCount": 1,
       "lastAccessed": 1783126872746,
+      "type": "file"
+    },
+    {
+      "path": "docs/plans/completed/v1.4.0-pwa-offline.md",
+      "accessCount": 1,
+      "lastAccessed": 1783132437437,
+      "type": "file"
+    },
+    {
+      "path": "lib/feature-flag.ts",
+      "accessCount": 1,
+      "lastAccessed": 1783133307046,
+      "type": "file"
+    },
+    {
+      "path": "app/api/review-queue/route.ts",
+      "accessCount": 1,
+      "lastAccessed": 1783133426249,
+      "type": "file"
+    },
+    {
+      "path": "db/schema-word-progress.ts",
+      "accessCount": 1,
+      "lastAccessed": 1783133426321,
+      "type": "file"
+    },
+    {
+      "path": "app/(main)/review/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1783133439992,
+      "type": "file"
+    },
+    {
+      "path": "app/lesson/result-card.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1783133481048,
+      "type": "file"
+    },
+    {
+      "path": "scripts/check-i18n.ts",
+      "accessCount": 1,
+      "lastAccessed": 1783133532383,
+      "type": "file"
+    },
+    {
+      "path": "lib/speech-evaluation.ts",
+      "accessCount": 1,
+      "lastAccessed": 1783133610984,
+      "type": "file"
+    },
+    {
+      "path": "tests/feature-flag.test.ts",
+      "accessCount": 1,
+      "lastAccessed": 1783133665905,
       "type": "file"
     }
   ],

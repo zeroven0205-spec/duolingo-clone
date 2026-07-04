@@ -89,6 +89,17 @@ export const Items = ({
         {/* Point-redeemable catalog */}
         {SHOP_CATALOG.map((item) => {
           const affordable = points >= item.price;
+          // Hearts Pack is useless when hearts are already full — disable
+          // it client-side as well so the action's "already full" error
+          // never reaches the user.
+          const itemDisabled =
+            item.id === "hearts_pack" && hearts >= MAX_HEARTS;
+          const disabled = pending || !affordable || itemDisabled;
+          const buttonLabel = !affordable
+            ? "积分不足"
+            : itemDisabled
+              ? "已满"
+              : null;
           return (
             <div
               key={item.id}
@@ -112,11 +123,11 @@ export const Items = ({
 
               <Button
                 onClick={() => onPurchase(item.id)}
-                disabled={pending || !affordable}
-                aria-disabled={pending || !affordable}
+                disabled={disabled}
+                aria-disabled={disabled}
               >
-                {!affordable ? (
-                  "积分不足"
+                {buttonLabel ? (
+                  buttonLabel
                 ) : (
                   <div className="flex items-center">
                     <Image

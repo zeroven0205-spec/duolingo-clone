@@ -4,6 +4,12 @@
 
 ## 版本记录
 
+### Active（当前进行中）
+
+| 版本 | 说明 |
+| ---- | ---- |
+| [v2.2.0-content-and-cleanup.md](./active/v2.2.0-content-and-cleanup.md) | 内容扩展 + v2.1.0 收尾 (P0 遗留 / 多语言 / 5+ 单元 / 音频题型) |
+
 ### Phase 0: 紧急修复
 
 | 版本 | 日期 | 说明 |
