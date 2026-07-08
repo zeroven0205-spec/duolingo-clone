@@ -14,6 +14,7 @@ import { MAX_HEARTS } from "@/constants";
 import { challengeOptions, challenges, userSubscription } from "@/db/schema";
 import { useHeartsModal } from "@/store/use-hearts-modal";
 import { usePracticeModal } from "@/store/use-practice-modal";
+import { type CardBox, getBoxLabel } from "@/lib/spaced-repetition";
 
 import { Challenge } from "./challenge";
 import { Footer } from "./footer";
@@ -192,6 +193,25 @@ export const Quiz = ({
               value={userSubscription?.isActive ? Infinity : hearts}
             />
           </div>
+
+          {/* Coarse representative box — v2.2.0 has no per-word state, so we
+              surface the spaced-repetition hierarchy by mapping the lesson's
+              overall accuracy to a single Leitner box label. Real per-word
+              tracking will land once userWords lands in lesson completion. */}
+          {(() => {
+            const lessonBox: CardBox =
+              percentage >= 100 ? 4
+              : percentage >= 75 ? 3
+              : percentage >= 50 ? 2
+              : percentage >= 25 ? 1
+              : 0;
+            const lessonBoxLabel = getBoxLabel(lessonBox);
+            return (
+              <p className="text-xs text-muted-foreground">
+                Memory level: <strong>{lessonBoxLabel}</strong>
+              </p>
+            );
+          })()}
         </div>
 
         <Footer
